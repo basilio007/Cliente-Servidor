@@ -9,14 +9,16 @@ import java.net.Socket;
 public class ServidorMain {
 
 	public static void main(String[] args) {
+		
 	ServerSocket servidor = null;
 	Socket sock = null;
-	int PUERTO = 1234;
+	 final int PUERTO = 1234;
+	
 	DataInputStream in;
 	DataOutputStream out;
 	
 	try {
-		servidor = new ServerSocket();
+		servidor = new ServerSocket(PUERTO);
 		System.out.println("Servidor inicializado...OK");
 		
 		
@@ -33,6 +35,7 @@ public class ServidorMain {
 			
 			sock.close();
 			System.out.println("cliente desconectado...OK");
+			System.out.print("");
 			
 		}
 		
